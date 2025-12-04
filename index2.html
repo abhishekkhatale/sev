@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shev Wala - Premium Traditional Snacks</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #666666;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #000000;
+      color: #ffffff;
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 0.5px;
+      transition: background-color 0.2s;
+    }
+
+    .cta-button:hover {
+      background-color: #333333;
+    }
+
+    /* Products Section */
+    .products {
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .products h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      letter-spacing: -0.5px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .product-card {
+      border: 1px solid #e5e5e5;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .product-card:hover {
+      border-color: #000000;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      background-color: #f5f5f5;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card .price {
+      font-size: 1rem;
+      color: #666666;
+      margin-bottom: 1rem;
+    }
+
+    .product-card .description {
+      font-size: 0.875rem;
+      color: #888888;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .order-button {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+
+    .order-button:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 4rem 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .footer-section h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 0.875rem;
+      color: #999999;
+      line-height: 1.8;
+    }
+
+    .footer-section a {
+      display: block;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-section a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid #333333;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.75rem;
+      color: #666666;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        padding: 4rem 1.5rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .header-container {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">Shev Wala</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Authentic Traditional Snacks</h1>
+      <p>Handcrafted with love using time-honored recipes. Experience the taste of tradition in every bite.</p>
+      <a href="#products" class="cta-button">EXPLORE PRODUCTS</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <h2>Our Products</h2>
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ImdHtB5XnG63df89W4f7uX1qgKBBPQSaHQ&s" alt="Thin Sev">
+        </div>
+        <h3>Thin Sev</h3>
+        <p class="price">Rs. 120 / 250g</p>
+        <p class="description">Crispy, thin vermicelli-style snack made from gram flour with perfect spices.</p>
+       <a href="https://wa.me/message/UJVPBVE747PEO1?src=qr" class="order-button" target="_blank">Order on WhatsApp</a>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2016/10/sev-recipe-1.jpg" alt="Thick Sev">
+        </div>
+        <h3>Thick Sev</h3>
+        <p class="price">Rs. 110 / 250g</p>
+        <p class="description">Crunchy thick sev with a bold flavor, perfect for snacking or garnishing.</p>
+        <a href="https://wa.me/message/UJVPBVE747PEO1?src=qr" class="order-button" target="_blank">Order on WhatsApp</a>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://www.srisritattva.com/cdn/shop/articles/How_to_Make_Crispy_Tasty_Baked_Aloo_Bhujia_at_Home.png?v=1741245696" alt="Bhujia">
+        </div>
+        <h3>Bhujia</h3>
+        <p class="price">Rs. 140 / 250g</p>
+        <p class="description">Classic spicy bhujia made with authentic spices and premium ingredients.</p>
+      <a href="https://wa.me/message/UJVPBVE747PEO1?src=qr" class="order-button" target="_blank">Order on WhatsApp</a>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://static.toiimg.com/photo/76368732.cms" alt="Aloo Bhujia">
+        </div>
+        <h3>Aloo Bhujia</h3>
+        <p class="price">Rs. 150 / 250g</p>
+        <p class="description">Potato-based crispy bhujia with a unique taste and perfect crunch.</p>
+        <a href="https://wa.me/message/UJVPBVE747PEO1?src=qr" class="order-button" target="_blank">Order on WhatsApp</a>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://i0.wp.com/s3.ap-south-1.amazonaws.com/media.florafoods.in/wp-content/uploads/2022/06/24035331/Sev-Mixture-01.jpg?fit=800%2C800&ssl=1" alt="Mixture">
+        </div>
+        <h3>Mixture</h3>
+        <p class="price">Rs. 130 / 250g</p>
+        <p class="description">A delightful mix of sev, peanuts, and crispy elements with aromatic spices.</p>
+       <a href="https://wa.me/message/UJVPBVE747PEO1?src=qr" class="order-button" target="_blank">Order on WhatsApp</a>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://gudfudbox.com/wp-content/uploads/2021/03/mix.jpg" alt="Khatta Meetha">
+        </div>
+        <h3>Khatta Meetha</h3>
+        <p class="price">Rs. 135 / 250g</p>
+        <p class="description">Sweet and tangy snack mix that perfectly balances flavors in every bite.</p>
+        <a href="https://wa.me/message/UJVPBVE747PEO1?src=qr" class="order-button" target="_blank">Order on WhatsApp</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Shev Wala</h4>
+        <p>Premium traditional snacks made with authentic recipes passed down through generations.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <a href="tel:+919876543210">+91 98765 43210</a>
+        <a href="mailto:info@shevwala.com">info@shevwala.com</a>
+        <a href="https://wa.me/message/UJVPBVE747PEO1?src=qr" target="_blank">WhatsApp Us</a>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Shev Wala. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
